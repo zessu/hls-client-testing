@@ -36,6 +36,14 @@ export class VideoPlayerComponent implements OnInit {
     this.desc = description;
   }
 
+  pauseVideo(): void {
+    this.videoComponent.nativeElement.pause();
+  }
+
+  playVideo(): void {
+    this.videoComponent.nativeElement.play();
+  }
+
   constructor() { }
 
   ngOnInit(): void {
