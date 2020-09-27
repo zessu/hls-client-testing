@@ -1,20 +1,21 @@
 <div id="player">
   <div id="canvas">
-    <video id="video" #video></video>
+    <video id="video" #video autoplay></video>
   </div>
   <div id="controls">
-    <button type="button" id="play-button" class="button">Play</button>
-    <button type="button" id="pause-button" class="button">Pause</button>
+    <a href="#" (click)="rewind()">
+      <mat-icon style="color: #08102b"aria-hidden="false" aria-label="rewind 10 seconds" mat-list-icon>replay_10</mat-icon>
+    </a>
+    <a href="#" (click)="play()"><mat-icon style="color: #08102b"aria-hidden="false" aria-label="pause" mat-list-icon>pause</mat-icon>
+    </a>
+    <mat-slider></mat-slider>
+    <a href="#" (click)="play()"><mat-icon style="color: #08102b"aria-hidden="false" aria-label="play" mat-list-icon>play_arrow</mat-icon>
+    </a>
+    <a href="#" (click)="play()"><mat-icon style="color: #08102b"aria-hidden="false" aria-label="forward 10 seconds" mat-list-icon>forward_10</mat-icon>
+    </a>
   </div>
   <div id="videoTitle">
     <h2>{{videoDescription}}</h2>
     {{videoUrl}}
   </div>
 </div>
-
-<!-- ability to play
-ability to pause
-display current time duration
-advanced to next clip as a bonus
-link to assets -> https://g33ktricks.blogspot.com/2016/04/list-of-hls-streaming-video-sample-test.html
-   -->
