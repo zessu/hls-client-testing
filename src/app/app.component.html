@@ -112,8 +112,8 @@
 
   <!-- Resources -->
   <div id="video-content">
-    <app-hsl-list (urlChange)="loadVideo($event)"></app-hsl-list>
-    <app-video-player videoUrl={{loadedVideo}} videoDescription={{videoDescription}}></app-video-player>
+    <app-hsl-list (urlChange)="loadVideo($event)" (description)="loadDescription($event)"></app-hsl-list>
+    <app-video-player [videoUrl]=loadedVideo [videoDescription]=videoDescription></app-video-player>
   </div>
   <input type="hidden" #selection>
 </div>

@@ -16,9 +16,14 @@ export class AppComponent implements AfterViewInit {
   public loadedVideo = 'http://qthttp.apple.com.edgesuite.net/1010qwoeiuryfg/sl.m3u8';
   public videoDescription = 'Steve jobs One';
 
-  loadVideo(videoInfo: HslVideoItem): void {
-    this.loadedVideo = videoInfo.url;
-    this.videoDescription = videoInfo.description;
+  loadVideo(url: string): void {
+    console.log('video url changed');
+    this.loadedVideo = url;
+  }
+
+  loadDescription(description: string): void {
+    console.log('video description changed');
+    this.videoDescription = description;
   }
 
   ngAfterViewInit(): void {
