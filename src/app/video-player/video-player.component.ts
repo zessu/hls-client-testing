@@ -8,6 +8,9 @@ declare var Hls: any;
 })
 export class VideoPlayerComponent implements OnInit {
   @ViewChild('video', {static: true}) videoComponent: ElementRef;
+
+  videoPaused  = false;
+  correctButton = 'pause';
   private url = '';
   private desc = '';
 
@@ -36,18 +39,26 @@ export class VideoPlayerComponent implements OnInit {
     this.desc = description;
   }
 
-  pauseVideo(): void {
-    this.videoComponent.nativeElement.pause();
+  togglePause(): void {
+    if (this.videoPaused) {
+      // play video and change icon to pause icon
+      this.videoComponent.nativeElement.play();
+      this.correctButton = 'pause';
+      this.videoPaused = false;
+    } else {
+      // pause video and change icon to play icon
+      this.videoComponent.nativeElement.pause();
+      this.correctButton = 'play_arrow';
+      this.videoPaused = true;
+    }
   }
 
-  playVideo(): void {
-    this.videoComponent.nativeElement.play();
-  }
+  forwardVideo(): void {}
+
+  rewindVideo(): void {}
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
-  loadVideo(): void {}
 }
