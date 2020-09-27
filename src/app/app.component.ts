@@ -1,5 +1,4 @@
 import { Component, EventEmitter, ViewChild, OnInit, AfterViewInit} from '@angular/core';
-import { } from 'hls.js';
 
 interface HslVideoItem {
   readonly description: string;
