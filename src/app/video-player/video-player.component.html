@@ -1,6 +1,6 @@
 <div id="player" fxLayout="column">
   <div id="canvas" >
-    <video id="video" #video autoplay ngClass="player"></video>
+    <video id="video" #video autoplay ngClass="player" controls></video>
   </div>
   <div id="controls">
     <a href="#" (click)="rewindVideo()">
@@ -11,6 +11,7 @@
     <mat-slider></mat-slider>
     <a href="#" (click)="forwardVideo()"><mat-icon style="color: #08102b"aria-hidden="false" aria-label="forward 10 seconds" mat-list-icon>forward_10</mat-icon>
     </a>
+    <span>{{currentTime}}</span>
   </div>
   <div id="videoTitle">
     <h2>{{videoDescription}}</h2>

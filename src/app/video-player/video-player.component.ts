@@ -8,9 +8,9 @@ declare var Hls: any;
 })
 export class VideoPlayerComponent implements OnInit {
   @ViewChild('video', {static: true}) videoComponent: ElementRef;
-
   videoPaused  = false;
   correctButton = 'pause';
+  currentTime = 0;
   private url = '';
   private desc = '';
 
@@ -25,7 +25,6 @@ export class VideoPlayerComponent implements OnInit {
       hls.loadSource(this.videoUrl);
       hls.attachMedia(this.videoComponent.nativeElement);
       hls.on(Hls.Events.MANIFEST_PARSED, () => {
-        console.log('we are here');
         this.videoComponent.nativeElement.play();
       });
     }
