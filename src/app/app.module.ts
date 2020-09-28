@@ -10,6 +10,7 @@ import { HslListComponent } from './hsl-list/hsl-list.component';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import {MatSliderModule} from '@angular/material/slider';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {MatSliderModule} from '@angular/material/slider';
     BrowserAnimationsModule,
     MatListModule,
     MatIconModule,
-    MatSliderModule
+    MatSliderModule,
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

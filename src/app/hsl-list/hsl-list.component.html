@@ -1,9 +1,11 @@
 <mat-list>
   <div mat-subheader>Video List</div>
-  <mat-list-item *ngFor="let item of urls">
-    <mat-icon style="color: #08102b"
-    aria-hidden="false" aria-label="folder icon" mat-list-icon>folder</mat-icon>
-    <div>{{item.description}}</div>
-    <div><a href="#" class="link" (click)="[playVideo(item.url, item.description)]">{{item.url}}</a></div>
-  </mat-list-item>
+  <div id="container">
+  <div *ngFor="let item of urls" class="video-titles">
+    <div class="item">
+      <div class="description">{{item.description}}</div>
+      <!-- <div class="url"><a href="#" class="link" (click)="[playVideo(item.url, item.description)]">{{item.url}}</a></div> -->
+    </div>
+  </div>
+</div>
 </mat-list>

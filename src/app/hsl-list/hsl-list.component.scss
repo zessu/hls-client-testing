@@ -1,3 +1,16 @@
-a.link {
-  color: #08102b;
+#container {
+  padding: 20px;
+.video-titles {
+  margin-bottom: 20px;
+  .item {
+    .description {
+      color: #08102b;
+    }
+    .url {
+      a.link {
+        color: #08102b;
+      }
+    }
+  }
+}
 }

@@ -61,31 +61,20 @@
   }
 
   .content {
-    display: flex;
     max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
     background-color: #1282A2;
   }
 
   div#video-content {
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-    height: 100%;
   }
 
   div#video-content > app-hsl-list {
-      width: 40%;
-      height: 100%;
+      width: 100vw;
       background-color: #fffdfc;
   }
 
   div#video-content > app-video-player {
-      width: 60%;
-      height: 100%;
+      width: 100vw;
   }
 
 </style>
@@ -110,9 +99,15 @@
 <div class="content" role="main">
 
   <!-- Resources -->
-  <div id="video-content">
-    <app-hsl-list (urlChange)="loadVideo($event)" (description)="loadDescription($event)"></app-hsl-list>
-    <app-video-player [videoUrl]=loadedVideo [videoDescription]=videoDescription></app-video-player>
+  <div 
+    id="video-content" 
+    fxLayout="row" 
+    fxLayout.xs="column" 
+    fxLayout.sm="column" 
+    class="full-screen" 
+  >
+    <app-video-player [videoUrl]=loadedVideo [videoDescription]=videoDescription fxFlex="1 1 auto"></app-video-player>
+    <app-hsl-list (urlChange)="loadVideo($event)" (description)="loadDescription($event)" fxFlex="1 5 auto"></app-hsl-list>
   </div>
   <input type="hidden" #selection>
 </div>
