@@ -1,6 +1,7 @@
   #container { 
     position: relative;
     overflow: hidden;
+    max-width: 1200px;
     &:hover { cursor: pointer; }
     &:hover #controls {
       transform: translateY(0);
@@ -17,6 +18,7 @@
       background-color: rgba($color: #ccc, $alpha: 0.4);
       transform: translateY(100%) translateY(-5px);
       transition: all .2s;
+      max-width: 1200px;
 
       #loader {
         position: absolute;
@@ -24,6 +26,7 @@
         left: 0px;
         width: 100%;
         background-color: #000;
+        max-width: 1200px;
         &:hover {
           cursor: pointer;
         }
@@ -44,9 +47,11 @@
       background-color: #000;
       height: 100%;
       width: 100%;
+      max-width: 1200px;
     }
   }
 
 #videoTitle {
   color: #08102B;
 }
+
