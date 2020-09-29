@@ -13,7 +13,7 @@ interface HslVideoItem {
 export class AppComponent implements AfterViewInit {
   public title = 'hsl-streamer-client-application';
   public loadedVideo = 'http://playertest.longtailvideo.com/adaptive/oceans_aes/oceans_aes.m3u8';
-  public videoDescription = 'Steve jobs One';
+  public videoDescription = 'Motion Pictures Short Film';
 
   loadVideo(url: string): void {
     this.loadedVideo = url;
