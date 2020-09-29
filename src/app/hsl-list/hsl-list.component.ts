@@ -15,9 +15,9 @@ export class HslListComponent implements OnInit {
   @Output() urlChange = new EventEmitter<string>();
   @Output() description = new EventEmitter<string>();
   public readonly urls: Array<HslVideoItem> = new Array<HslVideoItem>(
-    { description: 'steve jobs talk', url: 'http://qthttp.apple.com.edgesuite.net/1010qwoeiuryfg/sl.m3u8'},
     { description: 'motion picture animations', url: 'http://playertest.longtailvideo.com/adaptive/oceans_aes/oceans_aes.m3u8'},
     { description: 'smoking and cat food ads', url: 'http://playertest.longtailvideo.com/adaptive/captions/playlist.m3u8'},
+    { description: 'steve talk', url: 'http://qthttp.apple.com.edgesuite.net/1010qwoeiuryfg/sl.m3u8'},
   );
   constructor() { }
 

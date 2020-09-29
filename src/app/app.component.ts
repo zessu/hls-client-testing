@@ -12,7 +12,7 @@ interface HslVideoItem {
 })
 export class AppComponent implements AfterViewInit {
   public title = 'hsl-streamer-client-application';
-  public loadedVideo = 'http://qthttp.apple.com.edgesuite.net/1010qwoeiuryfg/sl.m3u8';
+  public loadedVideo = 'http://playertest.longtailvideo.com/adaptive/oceans_aes/oceans_aes.m3u8';
   public videoDescription = 'Steve jobs One';
 
   loadVideo(url: string): void {

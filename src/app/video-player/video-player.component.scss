@@ -17,11 +17,6 @@
       background-color: rgba($color: #ccc, $alpha: 0.4);
       transform: translateY(100%) translateY(-5px);
       transition: all .2s;
-      mat-slider {
-        position: relative;
-        top: -13px;
-        flex-grow: 5;
-      }
 
       #loader {
         position: absolute;
@@ -35,8 +30,6 @@
         #orange-bar {
           background-color: orangered;
           height: 10px;
-          width: 300px;
-
         }
       }
 
