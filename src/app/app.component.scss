@@ -9,15 +9,13 @@
   font-weight: 600;
   background-color: #0b8457;
   color: #fffdfc;
-}
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
 
-.toolbar #twitter-logo {
-  height: 40px;
-  margin: 0 16px;
-}
-
-.toolbar #twitter-logo:hover {
-  opacity: 0.8;
+  p {
+    color: #fff;
+  }
 }
 
 .content {
