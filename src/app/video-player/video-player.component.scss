@@ -16,7 +16,7 @@
       height: 50px;
       color: #fff;
       background-color: rgba($color: #ccc, $alpha: 0.4);
-      transform: translateY(100%) translateY(-5px);
+      transform: translateY(100%) translateY(-10px);
       transition: all .2s;
       max-width: 1200px;
 
@@ -43,7 +43,6 @@
     }
 
     #video {
-      border-radius: 4px;
       background-color: #000;
       height: 100%;
       width: 100%;
