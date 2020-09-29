@@ -16,12 +16,10 @@ export class AppComponent implements AfterViewInit {
   public videoDescription = 'Steve jobs One';
 
   loadVideo(url: string): void {
-    console.log('video url changed');
     this.loadedVideo = url;
   }
 
   loadDescription(description: string): void {
-    console.log('video description changed');
     this.videoDescription = description;
   }
 

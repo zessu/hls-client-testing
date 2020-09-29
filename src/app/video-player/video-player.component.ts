@@ -19,7 +19,7 @@ export class VideoPlayerComponent implements OnInit {
   }
 
   @Input() set videoUrl(val: string) {
-    this.url  = val;
+    this.url  = val; //
     if (Hls.isSupported()) {
       const hls = new Hls();
       hls.loadSource(this.videoUrl);

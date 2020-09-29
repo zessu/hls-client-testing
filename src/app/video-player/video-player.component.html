@@ -1,20 +1,19 @@
-<div id="player" fxLayout="column">
-  <div id="canvas" >
-    <video id="video" #video autoplay ngClass="player" controls></video>
+  <div id="container" fxLayout="column" >
+    <video id="video" #video autoplay></video>
+    <div id="controls">
+      <div id='loader'>
+        <div id="orange-bar">
+        </div>
+      </div>
+      <br />
+      <div id="buttons">
+        <a href="#" (click)="togglePause()"><mat-icon style="color: #fff"aria-hidden="false" aria-label="pause" mat-list-icon>{{correctButton}}</mat-icon>
+        </a>
+      </div>
+    </div>
   </div>
-  <div id="controls">
-    <a href="#" (click)="rewindVideo()">
-      <mat-icon style="color: #08102b"aria-hidden="false" aria-label="rewind 10 seconds" mat-list-icon>replay_10</mat-icon>
-    </a>
-    <a href="#" (click)="togglePause()"><mat-icon style="color: #08102b"aria-hidden="false" aria-label="pause" mat-list-icon>{{correctButton}}</mat-icon>
-    </a>
-    <mat-slider></mat-slider>
-    <a href="#" (click)="forwardVideo()"><mat-icon style="color: #08102b"aria-hidden="false" aria-label="forward 10 seconds" mat-list-icon>forward_10</mat-icon>
-    </a>
-    <span>{{currentTime}}</span>
-  </div>
+<!-- move this somewhere else -->
   <div id="videoTitle">
     <h2>{{videoDescription}}</h2>
     {{videoUrl}}
   </div>
-</div>
