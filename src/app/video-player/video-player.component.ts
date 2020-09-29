@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, ElementRef} from '@angular/core';
+import { Component, Input, ViewChild, ElementRef, AfterViewInit, Renderer2} from '@angular/core';
 declare var Hls: any;
 
 @Component({
@@ -6,11 +6,14 @@ declare var Hls: any;
   templateUrl: './video-player.component.html',
   styleUrls: ['./video-player.component.scss']
 })
-export class VideoPlayerComponent implements OnInit {
-  @ViewChild('video', {static: true}) videoComponent: ElementRef;
+export class VideoPlayerComponent implements AfterViewInit {
+  constructor(private renderer2: Renderer2) { }
+  @ViewChild('videoPlayer', {static: true}) videoComponent: ElementRef;
+  @ViewChild('orangeBar', {static: true}) loaderIndicator: ElementRef;
   videoPaused  = false;
   correctButton = 'pause';
   currentTime = 0;
+  videoDuration = 0;
   private url = '';
   private desc = '';
 
@@ -25,6 +28,11 @@ export class VideoPlayerComponent implements OnInit {
       hls.loadSource(this.videoUrl);
       hls.attachMedia(this.videoComponent.nativeElement);
       hls.on(Hls.Events.MANIFEST_PARSED, () => {
+        this.videoComponent.nativeElement.addEventListener('timeupdate', (event) => {
+          const loadingPosition = this.videoComponent.nativeElement.currentTime / this.videoComponent.nativeElement.duration;
+          const percentage = `${loadingPosition * 100}%`;
+          this.renderer2.setStyle(this.loaderIndicator.nativeElement, 'width', percentage);
+        });
         this.videoComponent.nativeElement.play();
       });
     }
@@ -52,12 +60,7 @@ export class VideoPlayerComponent implements OnInit {
     }
   }
 
-  forwardVideo(): void {}
-
-  rewindVideo(): void {}
-
-  constructor() { }
-
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
+    console.log(this.loaderIndicator);
   }
 }
