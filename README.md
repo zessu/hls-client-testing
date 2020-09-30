@@ -1,4 +1,4 @@
-# HslStreamerClientApplication
+# Hls Streamer Client Application
 
 <img src="./demo.gif"/>
 
