@@ -11,12 +11,14 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import {MatSliderModule} from '@angular/material/slider';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ListViewComponent } from './list-view/list-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VideoPlayerComponent,
-    HslListComponent
+    HslListComponent,
+    ListViewComponent
   ],
   imports: [
     BrowserModule,

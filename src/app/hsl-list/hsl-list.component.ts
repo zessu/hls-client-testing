@@ -1,9 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-
-interface HslVideoItem {
-  readonly description: string;
-  readonly url: string;
-}
+import { HslVideoItem } from '../videoItem.interface';
 
 @Component({
   selector: 'app-hsl-list',
@@ -15,18 +11,17 @@ export class HslListComponent implements OnInit {
   @Output() urlChange = new EventEmitter<string>();
   @Output() description = new EventEmitter<string>();
   public readonly urls: Array<HslVideoItem> = new Array<HslVideoItem>(
-    { description: 'Motion Picture Film', url: 'http://playertest.longtailvideo.com/adaptive/oceans_aes/oceans_aes.m3u8'},
-    { description: 'Ads', url: 'http://playertest.longtailvideo.com/adaptive/captions/playlist.m3u8'},
-    { description: 'Steve Jobs Presentation', url: 'http://qthttp.apple.com.edgesuite.net/1010qwoeiuryfg/sl.m3u8'},
-  );
+    { description: 'Motion Picture Film', url: 'http://playertest.longtailvideo.com/adaptive/oceans_aes/oceans_aes.m3u8', imageUrl: 'assets/images/disney.png'},
+    { description: 'Ads', url: 'http://playertest.longtailvideo.com/adaptive/captions/playlist.m3u8', imageUrl: 'assets/images/ads.png'},
+    { description: 'Steve Jobs Presentation', url: 'http://qthttp.apple.com.edgesuite.net/1010qwoeiuryfg/sl.m3u8', imageUrl: 'assets/images/jobs.png'},
+  ); // would fetch this from external data source
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  playVideo(url: string, description: string): void {
-    // pass event to top component, ask app to play
-    this.urlChange.emit(url);
-    this.description.emit(description);
+  playVideo(item: HslVideoItem): void  {
+    this.urlChange.emit(item.url);
+    this.description.emit(item.description);
   }
 }

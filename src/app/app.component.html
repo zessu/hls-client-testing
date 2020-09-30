@@ -11,7 +11,7 @@
     fxLayout.xs="column" 
     fxLayout.sm="column" 
   >
-    <app-video-player [videoUrl]=loadedVideo [videoDescription]=videoDescription fxFlex="3 2 auto"></app-video-player>
+    <app-video-player [videoUrl]=loadedVideo [videoDescription]=videoDescription fxFlex="5 1 auto"></app-video-player>
     <app-hsl-list (urlChange)="loadVideo($event)" (description)="loadDescription($event)" fxFlex="1 1 auto"></app-hsl-list>
   </div>
   <input type="hidden" #selection>

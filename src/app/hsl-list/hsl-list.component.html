@@ -1,9 +1,9 @@
 <mat-list>
-  <div mat-subheader>Video List</div>
   <div id="container">
   <div *ngFor="let item of urls" class="video-titles">
     <div class="item">
-      <div class="description"><a href="#" class="link" (click)="[playVideo(item.url, item.description)]">{{item.description}}</a></div>
+      <app-list-view [url]="item.url" [imageUrl]="item.imageUrl" [description]="item.description" (videoSelected)="playVideo($event)"></app-list-view>
+      <!-- <div class="description"><a href="#" class="link" (click)="[playVideo(item.url, item.description)]">{{item.description}}</a></div> -->
       <!-- <div class="url"><a href="#" class="link" (click)="[playVideo(item.url, item.description)]">{{item.url}}</a></div> -->
     </div>
   </div>
