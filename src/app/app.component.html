@@ -9,10 +9,22 @@
     id="video-content" 
     fxLayout="row" 
     fxLayout.xs="column" 
-    fxLayout.sm="column" 
+    fxLayout.sm="column"
   >
-    <app-video-player [videoUrl]=loadedVideo [videoDescription]=videoDescription fxFlex="5 1 auto"></app-video-player>
-    <app-hsl-list (urlChange)="loadVideo($event)" (description)="loadDescription($event)" fxFlex="1 1 auto"></app-hsl-list>
+    <app-video-player 
+    [videoUrl]=loadedVideo 
+    [videoDescription]=videoDescription 
+    fxFlex="5 1 auto"
+    ngClass.xs="mobile-height"
+    ngClass.sm="mobile-height"
+    >
+  </app-video-player>
+    <app-hsl-list 
+    (urlChange)="loadVideo($event)" 
+    (description)="loadDescription($event)" 
+    fxFlex="1 1 auto"
+    >
+  </app-hsl-list>
   </div>
   <input type="hidden" #selection>
 </div>
